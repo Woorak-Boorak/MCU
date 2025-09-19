@@ -9,17 +9,17 @@
 int ms_count = 0;
 
 void ISR_Init(void){
-	TCCR1B |= (1<<WGM12);
+	TCCR2B |= (1<<WGM21);
 	//CTC모드 ON (dataSheet 109p 참고)
-	TCCR1B |= (1<<CS11) | (1<<CS10);
+	TCCR2B |= (1<<CS22);
 	//prescaler 설정
-	OCR1A = 255;
+	OCR2A = 249;
 	//TOP 설정
-	TIMSK1 |= (1<<OCIE1A);
+	TIMSK2 |= (1<<OCIE2A);
 	sei();
 }
 
-ISR(TIMER1_COMPA_vect){
+ISR(TIMER2_COMPA_vect){
 	ms_count++;
 	if(ms_count%1==0){
 		task_1ms();
