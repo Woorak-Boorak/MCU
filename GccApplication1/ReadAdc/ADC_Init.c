@@ -9,6 +9,7 @@
 #define STEER 3
 #define MOTOR 4
 #define BREAK 5
+#define LIGHT 6
 
 
 static volatile uint16_t steer;
