@@ -246,14 +246,14 @@ int main(void)
 	Servo_Init();
  178:	0e 94 97 01 	call	0x32e	; 0x32e <Servo_Init>
 
-	DDRB |= (1 << 5); // PB5 ì¶œë ¥ (LED)
+	DDRB |= (1 << 5); // PB5 Ãâ·Â (LED)
  17c:	84 b1       	in	r24, 0x04	; 4
  17e:	80 62       	ori	r24, 0x20	; 32
  180:	84 b9       	out	0x04, r24	; 4
  182:	ff cf       	rjmp	.-2      	; 0x182 <main+0x12>
 
 00000184 <task_1ms>:
-		// main loop??ISRê³?task??ë§¡ê?
+		// main loop´Â ISR°ú task¿¡ ¸Ã±è
 	}
 	return 1;
 }
@@ -268,17 +268,17 @@ void task_1ms() {
 void task_60ms() {
  186:	cf 93       	push	r28
  188:	df 93       	push	r29
-	uint16_t steer = ADC_GetSteer(); 
+	uint16_t steer = ADC_GetSteer(); // PC3
  18a:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <ADC_GetSteer>
  18e:	ec 01       	movw	r28, r24
-	uint16_t motor = ADC_GetMotor(); 
+	uint16_t motor = ADC_GetMotor(); // PC4
  190:	0e 94 fe 00 	call	0x1fc	; 0x1fc <ADC_GetMotor>
-	uint16_t brek = ADC_GetBreak(); 
+	uint16_t brek = ADC_GetBreak(); // PC5
  194:	0e 94 03 01 	call	0x206	; 0x206 <ADC_GetBreak>
 	uint16_t light = ADC_GetLight();
  198:	0e 94 08 01 	call	0x210	; 0x210 <ADC_GetLight>
 
-	// LED ?œì–´
+	// LED Á¦¾î
 	if (light > THRESHOLD) {
  19c:	81 30       	cpi	r24, 0x01	; 1
  19e:	92 40       	sbci	r25, 0x02	; 2
@@ -295,8 +295,8 @@ void task_60ms() {
  1ae:	85 b9       	out	0x05, r24	; 5
 	}
 
-	// ?œë³´ ?œì–´ (?? PC3 ê°’ìœ¼ë¡??œì–´)
-	uint8_t angle = (steer * 180L) / 1023;  // 0~1023 ??0~180??ë§¤í•‘
+	// ¼­º¸ Á¦¾î (¿¹: PC3 °ªÀ¸·Î Á¦¾î)
+	uint8_t angle = (steer * 180L) / 1023;  // 0~1023 ¡æ 0~180µµ ¸ÅÇÎ
  1b0:	9e 01       	movw	r18, r28
  1b2:	a4 eb       	ldi	r26, 0xB4	; 180
  1b4:	b0 e0       	ldi	r27, 0x00	; 0
