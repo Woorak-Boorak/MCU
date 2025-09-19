@@ -13,10 +13,10 @@ int main(void)
 	ADC_Init();
 	Servo_Init();
 
-	DDRB |= (1 << 5); // PB5 Ãâ·Â (LED)
+	DDRB |= (1 << 5); // PB5 ì¶œë ¥ (LED)
 
 	while (1) {
-		// main loop´Â ISR°ú task¿¡ ¸Ã±è
+		// main loopëŠ” ISRê³¼ taskì— ë§¡ê¹€
 	}
 	return 1;
 }
@@ -26,19 +26,20 @@ void task_1ms() {
 }
 
 void task_60ms() {
-	uint16_t val3 = ADC_GetValue(0); // PC3
-	uint16_t val4 = ADC_GetValue(1); // PC4
-	uint16_t val5 = ADC_GetValue(2); // PC5
+	uint16_t steer = ADC_GetSteer(); // PC3
+	uint16_t motor = ADC_GetMotor(); // PC4
+	uint16_t brek = ADC_GetBreak(); // PC5
+	uint16_t light = ADC_GetLight();
 
-	// LED Á¦¾î
-	if (val3 > THRESHOLD || val4 > THRESHOLD || val5 > THRESHOLD) {
+	// LED ì œì–´
+	if (light > THRESHOLD) {
 		PORTB |= (1 << 5);
 		} else {
 		PORTB &= ~(1 << 5);
 	}
 
-	// ¼­º¸ Á¦¾î (¿¹: PC3 °ªÀ¸·Î Á¦¾î)
-	uint8_t angle = (val3 * 180L) / 1023;  // 0~1023 ¡æ 0~180µµ ¸ÅÇÎ
+	// ì„œë³´ ì œì–´ (ì˜ˆ: PC3 ê°’ìœ¼ë¡œ ì œì–´)
+	uint8_t angle = (val3 * 180L) / 1023;  // 0~1023 â†’ 0~180ë„ ë§¤í•‘
 	Servo_SetAngle(angle);
 }
 
