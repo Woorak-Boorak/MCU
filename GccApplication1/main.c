@@ -3,7 +3,7 @@
 #include <util/delay.h>
 #include "BSW/ISR.h"
 #include "ReadAdc/ADC_Init.h"
-#include "Servo/Servo.h"  
+#include "Servo/Servo.h"
 
 #define THRESHOLD 512
 
@@ -13,10 +13,10 @@ int main(void)
 	ADC_Init();
 	Servo_Init();
 
-	DDRB |= (1 << 5); // PB5 ì¶œë ¥ (LED)
+	DDRB |= (1 << 5); // PB5 Ãâ·Â (LED)
 
 	while (1) {
-		// main loopëŠ” ISRê³¼ taskì— ë§¡ê¹€
+		// main loop´Â ISR°ú task¿¡ ¸Ã±è
 	}
 	return 1;
 }
@@ -26,20 +26,19 @@ void task_1ms() {
 }
 
 void task_60ms() {
-	uint16_t steer = ADC_GetSteer(); 
-	uint16_t motor = ADC_GetMotor(); 
-	uint16_t brek = ADC_GetBreak(); 
-	uint16_t light = ADC_GetLight();
+	uint16_t val3 = ADC_GetValue(0); // PC3
+	uint16_t val4 = ADC_GetValue(1); // PC4
+	uint16_t val5 = ADC_GetValue(2); // PC5
 
-	// LED ì œì–´
-	if (light > THRESHOLD) {
+	// LED Á¦¾î
+	if (val3 > THRESHOLD || val4 > THRESHOLD || val5 > THRESHOLD) {
 		PORTB |= (1 << 5);
 		} else {
 		PORTB &= ~(1 << 5);
 	}
 
-	// ì„œë³´ ì œì–´ (ì˜ˆ: PC3 ê°’ìœ¼ë¡œ ì œì–´)
-	uint8_t angle = (val3 * 180L) / 1023;  // 0~1023 â†’ 0~180ë„ ë§¤í•‘
+	// ¼­º¸ Á¦¾î (¿¹: PC3 °ªÀ¸·Î Á¦¾î)
+	uint8_t angle = (steer * 180) / 1023;  // 0~1023 ¡æ 0~180µµ ¸ÅÇÎ
 	Servo_SetAngle(angle);
 }
 
