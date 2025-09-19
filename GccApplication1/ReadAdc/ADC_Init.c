@@ -42,7 +42,7 @@ uint16_t ADC_GetLight() {
 
 ISR(ADC_vect) {
 	// 현재 채널 값 저장
-	if(current_channel == STEER) stear = ADC;
+	if(current_channel == STEER) steer = ADC;
 	else if(current_channel == MOTOR) motor = ADC;
 	else if(current_channel == BREAK) brek = ADC;
 	else if(current_channel == LIGHT) light = ADC;
