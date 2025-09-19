@@ -10,9 +10,9 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <stdint.h>
 
-// 외부에서 사용할 함수
 void ADC_Init(void);
-uint16_t ADC_GetValue(void);
+uint16_t ADC_GetValue(uint8_t idx);  
 
 #endif /* ADC_INIT_H_ */
