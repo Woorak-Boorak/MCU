@@ -6,11 +6,10 @@
  */
 
 #include "ADC_Init.h"
+#define LIGHT 2
 #define STEER 3
 #define MOTOR 4
 #define BREAK 5
-#define LIGHT 6
-
 
 static volatile uint16_t steer;
 static volatile uint16_t motor;
@@ -22,6 +21,10 @@ void ADC_Init(void) {
 	ADMUX = (1 << REFS0) | (current_channel & 0x07); // AVcc 기준, ADC3 선택
 	ADCSRA = (1 << ADEN) | (1 << ADIE) | (1 << ADPS2) | (1 << ADPS1);
 	ADCSRA |= (1 << ADSC); // 첫 변환 시작
+}
+
+void ADC_Start(){
+	ADCSRA |= (1 << ADSC);
 }
 
 uint16_t ADC_GetSteer() {
@@ -55,7 +58,4 @@ ISR(ADC_vect) {
 
 	// ADMUX 업데이트
 	ADMUX = (1 << REFS0) | (current_channel & 0x07);
-
-	// 다음 변환 시작
-	ADCSRA |= (1 << ADSC);
 }

@@ -12,25 +12,24 @@ int main(void)
 	ISR_Init();
 	ADC_Init();
 	Servo_Init();
-
+	//GPIO_Init();
 	DDRB |= (1 << 5); // PB5 Ãâ·Â (LED)
 
 	while (1) {
-		// main loop´Â ISR°ú task¿¡ ¸Ã±è
 	}
 	return 1;
 }
 
 void task_1ms() {
-	// do nothing
+	ADC_Start();
 }
 
 void task_60ms() {
-	uint16_t steer = ADC_GetSteer(); // PC3
-	uint16_t motor = ADC_GetMotor(); // PC4
-	uint16_t brek = ADC_GetBreak(); // PC5
+	uint16_t steer = ADC_GetSteer(); 
+	uint16_t motor = ADC_GetMotor(); 
+	uint16_t brek = ADC_GetBreak(); 
 	uint16_t light = ADC_GetLight();
-
+	
 	// LED Á¦¾î
 	if (light > THRESHOLD) {
 		PORTB |= (1 << 5);
