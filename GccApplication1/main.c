@@ -38,7 +38,7 @@ void task_60ms() {
 	}
 
 	// 서보 제어 (예: PC3 값으로 제어)
-	uint8_t angle = (val3 * 180) / 1023;  // 0~1023 → 0~180도 매핑
+	uint8_t angle = (val3 * 180L) / 1023;  // 0~1023 → 0~180도 매핑
 	Servo_SetAngle(angle);
 }
 
