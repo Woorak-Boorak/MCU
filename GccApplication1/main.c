@@ -26,9 +26,9 @@ void task_1ms() {
 }
 
 void task_60ms() {
-	uint16_t steer = ADC_GetSteer(); // PC3
-	uint16_t motor = ADC_GetMotor(); // PC4
-	uint16_t brek = ADC_GetBreak(); // PC5
+	uint16_t steer = ADC_GetSteer(); 
+	uint16_t motor = ADC_GetMotor(); 
+	uint16_t brek = ADC_GetBreak(); 
 	uint16_t light = ADC_GetLight();
 
 	// LED 제어
