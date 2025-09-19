@@ -6,6 +6,7 @@
 int main(void)
 {
 	ISR_Init();
+	ADC_Init();
 	DDRB |= (1<<5);
 	/* Replace with your application code */
 	while (1)
