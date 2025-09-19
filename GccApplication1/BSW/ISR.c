@@ -9,11 +9,8 @@
 int ms_count = 0;
 
 void ISR_Init(void){
-<<<<<<< HEAD
 	TCCR2B |= (1<<WGM21);
-=======
 	TCCR2A |= (1<<WGM21);
->>>>>>> 86b27bc (3ADC)
 	//CTC모드 ON (dataSheet 109p 참고)
 	TCCR2B |= (1<<CS22);
 	//prescaler 설정
