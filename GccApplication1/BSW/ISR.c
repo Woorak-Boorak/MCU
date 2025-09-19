@@ -9,7 +9,6 @@
 int ms_count = 0;
 
 void ISR_Init(void){
-	TCCR2B |= (1<<WGM21);
 	TCCR2A |= (1<<WGM21);
 	//CTC모드 ON (dataSheet 109p 참고)
 	TCCR2B |= (1<<CS22);
