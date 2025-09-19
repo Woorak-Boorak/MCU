@@ -135,12 +135,19 @@
     <Compile Include="ReadAdc\ADC_Init.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="SERVO\SERVO.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SERVO\SERVO.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MotorControl" />
     <Folder Include="BSW" />
     <Folder Include="ReadSonic" />
     <Folder Include="ReadAdc" />
+    <Folder Include="SERVO\" />
     <Folder Include="VehicleControl" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />

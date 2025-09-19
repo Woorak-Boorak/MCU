@@ -37,6 +37,7 @@ SUBDIRS :=  \
 ../BSW \
 ../ReadSonic \
 ../ReadAdc \
+../SERVO/ \
 ../VehicleControl
 
 
@@ -44,7 +45,8 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../BSW/ISR.c \
 ../main.c \
-../ReadAdc/ADC_Init.c
+../ReadAdc/ADC_Init.c \
+../SERVO/SERVO.c
 
 
 PREPROCESSING_SRCS += 
@@ -56,22 +58,26 @@ ASM_SRCS +=
 OBJS +=  \
 BSW/ISR.o \
 main.o \
-ReadAdc/ADC_Init.o
+ReadAdc/ADC_Init.o \
+SERVO/SERVO.o
 
 OBJS_AS_ARGS +=  \
 BSW/ISR.o \
 main.o \
-ReadAdc/ADC_Init.o
+ReadAdc/ADC_Init.o \
+SERVO/SERVO.o
 
 C_DEPS +=  \
 BSW/ISR.d \
 main.d \
-ReadAdc/ADC_Init.d
+ReadAdc/ADC_Init.d \
+SERVO/SERVO.d
 
 C_DEPS_AS_ARGS +=  \
 BSW/ISR.d \
 main.d \
-ReadAdc/ADC_Init.d
+ReadAdc/ADC_Init.d \
+SERVO/SERVO.d
 
 OUTPUT_FILE_PATH +=GccApplication1.elf
 
@@ -102,6 +108,13 @@ BSW/ISR.o: ../BSW/ISR.c
 	
 
 ReadAdc/ADC_Init.o: ../ReadAdc/ADC_Init.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+SERVO/SERVO.o: ../SERVO/SERVO.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
