@@ -51,11 +51,9 @@ void task_1000ms() {
 	for (int i = 0; i < NUM_SENSORS; i++) {
 		// g_is_measured와 g_pulse_duration은 ultrasonic.h를 통해 접근
 		if (g_is_measured[i] == 1) {
-			cli();
 			// 타이머 1의 Prescaler가 8이므로 1틱 = 0.5us
 			distance_cm[i] = (uint16_t)((unsigned long)g_pulse_duration[i] * 5 / 58 / 10);
 			g_is_measured[i] = 0;
-			sei();
 		}
 	}
 	

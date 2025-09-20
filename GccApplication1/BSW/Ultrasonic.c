@@ -3,9 +3,9 @@
 // --- 모듈 내부 변수 (Module-Internal Variables) ---
 // 이 파일 안에서만 사용할 변수. static 키워드로 다른 파일에서의 접근을 막는다.
 static volatile uint16_t pulse_start_time[NUM_SENSORS];
+static volatile uint8_t last_pind_state = 0; // 이전 핀 상태를 저장할 변수 추가
 
-// --- 전역 변수 정의 (Global Variable Definitions) ---
-// .h 파일에서 extern으로 선언했던 변수들의 실체.
+// --- 전역 변수 정의 ---
 volatile uint16_t g_pulse_duration[NUM_SENSORS] = {0};
 volatile uint8_t g_is_measured[NUM_SENSORS] = {0};
 
@@ -57,27 +57,38 @@ void Ultrasonic_Trigger(uint8_t sensor_index)
 
 ISR(PCINT2_vect)
 {
-	// Sensor 0 (PD1)
-	if (bit_is_set(PIND, PIND1)) { // 상승 엣지
-		pulse_start_time[0] = TCNT1;
-		} else { // 하강 엣지
-		g_pulse_duration[0] = TCNT1 - pulse_start_time[0];
-		g_is_measured[0] = 1;
+	uint8_t current_pind_state = PIND; // 현재 D 포트의 핀 상태를 읽음
+	uint8_t changed_bits = current_pind_state ^ last_pind_state; // 이전 상태와 비교하여 변경된 핀을 찾음
+
+	// Sensor 0 (PD1)의 상태가 변했는지 확인
+	if (changed_bits & (1 << PIND1)) {
+		if (current_pind_state & (1 << PIND1)) { // 상승 엣지 (신호가 HIGH가 됨)
+			pulse_start_time[0] = TCNT1;
+			} else { // 하강 엣지 (신호가 LOW가 됨)
+			g_pulse_duration[0] = TCNT1 - pulse_start_time[0];
+			g_is_measured[0] = 1;
+		}
 	}
 
-	// Sensor 1 (PD3)
-	if (bit_is_set(PIND, PIND3)) { // 상승 엣지
-		pulse_start_time[1] = TCNT1;
-		} else { // 하강 엣지
-		g_pulse_duration[1] = TCNT1 - pulse_start_time[1];
-		g_is_measured[1] = 1;
+	// Sensor 1 (PD3)의 상태가 변했는지 확인
+	if (changed_bits & (1 << PIND3)) {
+		if (current_pind_state & (1 << PIND3)) { // 상승 엣지
+			pulse_start_time[1] = TCNT1;
+			} else { // 하강 엣지
+			g_pulse_duration[1] = TCNT1 - pulse_start_time[1];
+			g_is_measured[1] = 1;
+		}
 	}
 	
-	// Sensor 2 (PD7)
-	if (bit_is_set(PIND, PIND7)) { // 상승 엣지
-		pulse_start_time[2] = TCNT1;
-		} else { // 하강 엣지
-		g_pulse_duration[2] = TCNT1 - pulse_start_time[2];
-		g_is_measured[2] = 1;
+	// Sensor 2 (PD7)의 상태가 변했는지 확인
+	if (changed_bits & (1 << PIND7)) {
+		if (current_pind_state & (1 << PIND7)) { // 상승 엣지
+			pulse_start_time[2] = TCNT1;
+			} else { // 하강 엣지
+			g_pulse_duration[2] = TCNT1 - pulse_start_time[2];
+			g_is_measured[2] = 1;
+		}
 	}
+	
+	last_pind_state = current_pind_state; // 다음 인터럽트를 위해 현재 상태를 저장
 }
