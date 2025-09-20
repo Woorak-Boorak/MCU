@@ -4,6 +4,8 @@
 
 BSW\ADC_Init.c
 
+BSW\Ultrasonic.c
+
 BSW\GPIO_Init.c
 
 BSW\ISR.c
