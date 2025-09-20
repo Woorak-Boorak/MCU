@@ -120,25 +120,43 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BSW\ADC_Init.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSW\ADC_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSW\GPIO_Init.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSW\GPIO_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="BSW\ISR.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="BSW\ISR.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="BSW\Servo_Init.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSW\Servo_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ReadAdc\ADC_Init.c">
+    <Compile Include="ReadAdc\ADC.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ReadAdc\ADC_Init.h">
+    <Compile Include="ReadAdc\ADC.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="SERVO\SERVO.c">
+    <Compile Include="Servo\SERVO.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="SERVO\SERVO.h">
+    <Compile Include="Servo\SERVO.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
@@ -147,7 +165,7 @@
     <Folder Include="BSW" />
     <Folder Include="ReadSonic" />
     <Folder Include="ReadAdc" />
-    <Folder Include="SERVO\" />
+    <Folder Include="Servo" />
     <Folder Include="VehicleControl" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />

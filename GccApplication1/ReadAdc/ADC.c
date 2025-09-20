@@ -1,11 +1,11 @@
 ﻿/*
- * ADC_Init.c
+ * ADC.c
  *
- * Created: 2025-09-19
- * Author: rakggii
- */
+ * Created: 2025-09-20 오후 1:11:39
+ *  Author: kym11
+ */ 
+#include "ADC.h"
 
-#include "ADC_Init.h"
 #define LIGHT 2
 #define STEER 3
 #define MOTOR 4
@@ -16,12 +16,6 @@ static volatile uint16_t motor;
 static volatile uint16_t brek;
 static volatile uint16_t light;
 static volatile uint8_t current_channel = STEER;  // 시작: ADC3
-
-void ADC_Init(void) {
-	ADMUX = (1 << REFS0) | (current_channel & 0x07); // AVcc 기준, ADC3 선택
-	ADCSRA = (1 << ADEN) | (1 << ADIE) | (1 << ADPS2) | (1 << ADPS1);
-	ADCSRA |= (1 << ADSC); // 첫 변환 시작
-}
 
 void ADC_Start(){
 	ADCSRA |= (1 << ADSC);

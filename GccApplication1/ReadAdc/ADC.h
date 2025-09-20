@@ -1,18 +1,15 @@
 ﻿/*
- * ADC_Init.h
+ * ADC.h
  *
- * Created: 2025-09-19
- * Author: rakggii
- */
-
-#ifndef ADC_INIT_H_
-#define ADC_INIT_H_
-
+ * Created: 2025-09-20 오후 1:10:57
+ *  Author: kym11
+ */ 
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <stdint.h>
 
-void ADC_Init(void);
+#ifndef ADC_H_
+#define ADC_H_
 
 void ADC_Start();
 
@@ -25,4 +22,5 @@ uint16_t ADC_GetBreak();
 uint16_t ADC_GetLight();
 
 
-#endif /* ADC_INIT_H_ */
+
+#endif /* ADC_H_ */

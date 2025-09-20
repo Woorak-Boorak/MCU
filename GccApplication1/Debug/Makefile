@@ -37,16 +37,19 @@ SUBDIRS :=  \
 ../BSW \
 ../ReadSonic \
 ../ReadAdc \
-../SERVO/ \
+../Servo \
 ../VehicleControl
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../BSW/ADC_Init.c \
+../BSW/GPIO_Init.c \
 ../BSW/ISR.c \
+../BSW/Servo_Init.c \
 ../main.c \
-../ReadAdc/ADC_Init.c \
-../SERVO/SERVO.c
+../ReadAdc/ADC.c \
+../Servo/SERVO.c
 
 
 PREPROCESSING_SRCS += 
@@ -56,28 +59,40 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+BSW/ADC_Init.o \
+BSW/GPIO_Init.o \
 BSW/ISR.o \
+BSW/Servo_Init.o \
 main.o \
-ReadAdc/ADC_Init.o \
-SERVO/SERVO.o
+ReadAdc/ADC.o \
+Servo/SERVO.o
 
 OBJS_AS_ARGS +=  \
+BSW/ADC_Init.o \
+BSW/GPIO_Init.o \
 BSW/ISR.o \
+BSW/Servo_Init.o \
 main.o \
-ReadAdc/ADC_Init.o \
-SERVO/SERVO.o
+ReadAdc/ADC.o \
+Servo/SERVO.o
 
 C_DEPS +=  \
+BSW/ADC_Init.d \
+BSW/GPIO_Init.d \
 BSW/ISR.d \
+BSW/Servo_Init.d \
 main.d \
-ReadAdc/ADC_Init.d \
-SERVO/SERVO.d
+ReadAdc/ADC.d \
+Servo/SERVO.d
 
 C_DEPS_AS_ARGS +=  \
+BSW/ADC_Init.d \
+BSW/GPIO_Init.d \
 BSW/ISR.d \
+BSW/Servo_Init.d \
 main.d \
-ReadAdc/ADC_Init.d \
-SERVO/SERVO.d
+ReadAdc/ADC.d \
+Servo/SERVO.d
 
 OUTPUT_FILE_PATH +=GccApplication1.elf
 
@@ -93,7 +108,28 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+BSW/ADC_Init.o: ../BSW/ADC_Init.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+BSW/GPIO_Init.o: ../BSW/GPIO_Init.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 BSW/ISR.o: ../BSW/ISR.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+BSW/Servo_Init.o: ../BSW/Servo_Init.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -107,14 +143,14 @@ BSW/ISR.o: ../BSW/ISR.c
 	@echo Finished building: $<
 	
 
-ReadAdc/ADC_Init.o: ../ReadAdc/ADC_Init.c
+ReadAdc/ADC.o: ../ReadAdc/ADC.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-SERVO/SERVO.o: ../SERVO/SERVO.c
+Servo/SERVO.o: ../Servo/SERVO.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
