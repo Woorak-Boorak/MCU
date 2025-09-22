@@ -32,17 +32,20 @@ void task_5ms() {
 }
 
 void task_20ms(){
-	Servo_SetAngle();
+	Steering_Control(steer);
 }
 
 void task_60ms() {
 	Read_Sonic();
+	ModeUdate();
 }
 
 void task_1000ms() {
 	UART_TransmitADC(light);
 	UART_TransmitADC(distance_cm[0]);
 	UART_TransmitADC(distance_cm[1]);
-	UART_TransmitADC(distance_cm[2]);	
+	UART_TransmitADC(distance_cm[2]);
+	UART_TransmitADC(mode);	
+	
 	Light_Control(light);
 }

@@ -20,14 +20,13 @@ Tower Pro TM Micro Servo 9g SG90
 */
 
 #include "Servo.h"
-#include "../ReadAdc/ADC.h"
 
 // 위에서 계산한 설정값들을 상수로 정의
 #define ICR1_TOP 39999   // 20ms 주기 (50Hz)
 #define OCR_MIN  1000    // 1ms 펄스 (0도에 해당)
 #define OCR_MAX  5000    // 2ms 펄스 (180도에 해당)
 
-void Servo_SetAngle() {
+void Servo_SetAngle(uint16_t steer) {
 	uint8_t angle = (steer * 180L) / 1023;  // 0~1023 → 0~180도 매핑
 	// 입력된 각도(0~180)를 OCR 값(2000~4000)으로 비례 변환(mapping)
 	uint16_t ocr_value = OCR_MIN + (uint16_t)(((float)angle / 180.0) * (OCR_MAX - OCR_MIN));

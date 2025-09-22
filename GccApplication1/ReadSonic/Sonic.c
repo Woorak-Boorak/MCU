@@ -6,6 +6,7 @@
  */ 
 
 #include "Sonic.h"
+#include "../BSW/UART.h"
 #define LEFT 0
 #define CENTER 1
 #define RIGHT 2
@@ -19,7 +20,6 @@ volatile uint16_t g_pulse_duration[NUM_SENSORS] = {0};
 volatile uint8_t g_is_measured[NUM_SENSORS] = {0};
 volatile uint16_t distance_cm[NUM_SENSORS] = {0};
 
-
 void Read_Sonic()
 {
 	//(TRIG: PD0)
@@ -27,9 +27,9 @@ void Read_Sonic()
 	_delay_us(10);
 	PORTD &= ~(1 << PORTD2);
 	//(TRIG: PD0)
-	PORTD |= (1 << PORTD4);
+	/*PORTD |= (1 << PORTD4);
 	_delay_us(10);
-	PORTD &= ~(1 << PORTD4);
+	PORTD &= ~(1 << PORTD4);*/
 	//(TRIG: PD0)
 	PORTD |= (1 << PORTD6);
 	_delay_us(10);
@@ -41,8 +41,29 @@ void GetDistance(int index){
 	if (g_is_measured[index] == 1) {
 		// 타이머 1의 Prescaler가 8이므로 1틱 = 0.5us
 		distance_cm[index] = (uint16_t)((unsigned long)g_pulse_duration[index] * 5 / 58 / 10);
+		if(distance_cm[index] <= 10 && distance_cm[index] >= 0){
+			switch(index){
+				case 0:
+					mode = 1;
+					break;
+				case 1:
+					mode = 2;
+					break;
+				case 2:
+					mode = 3;
+					break;
+				default:
+					//do nothing
+					break;
+			}
+		}
+
 		g_is_measured[index] = 0;
 	}
+}
+
+void ModeUdate(){
+	if(distance_cm[0] > 10 &&  distance_cm[2] > 10)	mode = 0;
 }
 
 // --- 인터럽트 서비스 루틴 (ISRs) ---

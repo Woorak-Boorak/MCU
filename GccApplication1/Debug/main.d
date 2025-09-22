@@ -16,6 +16,7 @@ main.d main.o: .././main.c \
  .././BSW/ISR.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  .././BSW/UART.h .././BSW/../ReadSonic/Sonic.h \
+ .././BSW/../ReadSonic/../VehicleControl/Vehicle_Control.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
  .././BSW/ADC_Init.h .././BSW/Servo_Init.h .././BSW/GPIO_Init.h \
@@ -57,6 +58,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 .././BSW/UART.h:
 
 .././BSW/../ReadSonic/Sonic.h:
+
+.././BSW/../ReadSonic/../VehicleControl/Vehicle_Control.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 

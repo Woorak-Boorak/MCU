@@ -13,10 +13,12 @@
 
 #include <util/delay.h>
 #include <avr/interrupt.h>
+#include "../VehicleControl/Vehicle_Control.h"
 
 extern volatile uint16_t distance_cm[NUM_SENSORS];
 
 void Read_Sonic();
 void GetDistance();
+void ModeUdate();
 
 #endif /* SONIC_H_ */
