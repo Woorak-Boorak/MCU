@@ -1,5 +1,5 @@
-BSW/Ultrasonic.d BSW/Ultrasonic.o: ../BSW/Ultrasonic.c \
- ../BSW/Ultrasonic.h \
+BSW/Sonic_Init.d BSW/Sonic_Init.o: ../BSW/Sonic_Init.c \
+ ../BSW/Sonic_Init.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -12,7 +12,7 @@ BSW/Ultrasonic.d BSW/Ultrasonic.o: ../BSW/Ultrasonic.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h
 
-../BSW/Ultrasonic.h:
+../BSW/Sonic_Init.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 

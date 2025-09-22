@@ -4,7 +4,7 @@
 
 BSW\ADC_Init.c
 
-BSW\Ultrasonic.c
+BSW\Sonic_Init.c
 
 BSW\GPIO_Init.c
 
@@ -16,5 +16,9 @@ main.c
 
 ReadAdc\ADC.c
 
+ReadSonic\Sonic.c
+
 Servo\SERVO.c
+
+VehicleControl\Vehicle_Control.c
 

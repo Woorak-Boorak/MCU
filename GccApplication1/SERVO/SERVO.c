@@ -35,5 +35,4 @@ void Servo_SetAngle() {
 	
 	// 두 서보모터가 동일하게 움직이므로 OCR1A, OCR1B에 같은 값을 설정
 	OCR1A = ocr_value;
-	OCR1B = ocr_value;
 }

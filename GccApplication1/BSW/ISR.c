@@ -21,14 +21,22 @@ void ISR_Init(void){
 
 ISR(TIMER2_COMPA_vect){
 	ms_count++;
-	if(ms_count%1==0){
-		task_1ms();
+	if(ms_count%5==0){
+		task_5ms();
 	}
 	else
 	{
 		//do nothing
 	}
 	
+	if(ms_count%20==0){
+		task_20ms();
+	}
+	else
+	{
+		//do nothing
+	}
+
 	if(ms_count%60==0){
 		task_60ms();
 	}
@@ -36,17 +44,9 @@ ISR(TIMER2_COMPA_vect){
 	{
 		//do nothing
 	}
-
-	if(ms_count%100==0){
-		task_1000ms();
-	}
-	else
-	{
-		//do nothing
-	}
 	
-	if(ms_count%2000==0){
-		task_2000ms();
+	if(ms_count%1000==0){
+		task_1000ms();
 		ms_count = 0;
 	}
 	else

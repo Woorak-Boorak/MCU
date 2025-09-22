@@ -44,13 +44,15 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../BSW/ADC_Init.c \
-../BSW/Ultrasonic.c \
+../BSW/Sonic_Init.c \
 ../BSW/GPIO_Init.c \
 ../BSW/ISR.c \
 ../BSW/Servo_Init.c \
 ../main.c \
 ../ReadAdc/ADC.c \
-../Servo/SERVO.c
+../ReadSonic/Sonic.c \
+../Servo/SERVO.c \
+../VehicleControl/Vehicle_Control.c
 
 
 PREPROCESSING_SRCS += 
@@ -61,43 +63,51 @@ ASM_SRCS +=
 
 OBJS +=  \
 BSW/ADC_Init.o \
-BSW/Ultrasonic.o \
+BSW/Sonic_Init.o \
 BSW/GPIO_Init.o \
 BSW/ISR.o \
 BSW/Servo_Init.o \
 main.o \
 ReadAdc/ADC.o \
-Servo/SERVO.o
+ReadSonic/Sonic.o \
+Servo/SERVO.o \
+VehicleControl/Vehicle_Control.o
 
 OBJS_AS_ARGS +=  \
 BSW/ADC_Init.o \
-BSW/Ultrasonic.o \
+BSW/Sonic_Init.o \
 BSW/GPIO_Init.o \
 BSW/ISR.o \
 BSW/Servo_Init.o \
 main.o \
 ReadAdc/ADC.o \
-Servo/SERVO.o
+ReadSonic/Sonic.o \
+Servo/SERVO.o \
+VehicleControl/Vehicle_Control.o
 
 C_DEPS +=  \
 BSW/ADC_Init.d \
-BSW/Ultrasonic.d \
+BSW/Sonic_Init.d \
 BSW/GPIO_Init.d \
 BSW/ISR.d \
 BSW/Servo_Init.d \
 main.d \
 ReadAdc/ADC.d \
-Servo/SERVO.d
+ReadSonic/Sonic.d \
+Servo/SERVO.d \
+VehicleControl/Vehicle_Control.d
 
 C_DEPS_AS_ARGS +=  \
 BSW/ADC_Init.d \
-BSW/Ultrasonic.d \
+BSW/Sonic_Init.d \
 BSW/GPIO_Init.d \
 BSW/ISR.d \
 BSW/Servo_Init.d \
 main.d \
 ReadAdc/ADC.d \
-Servo/SERVO.d
+ReadSonic/Sonic.d \
+Servo/SERVO.d \
+VehicleControl/Vehicle_Control.d
 
 OUTPUT_FILE_PATH +=GccApplication1.elf
 
@@ -120,7 +130,7 @@ BSW/ADC_Init.o: ../BSW/ADC_Init.c
 	@echo Finished building: $<
 	
 
-BSW/Ultrasonic.o: ../BSW/Ultrasonic.c
+BSW/Sonic_Init.o: ../BSW/Sonic_Init.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -162,7 +172,21 @@ ReadAdc/ADC.o: ../ReadAdc/ADC.c
 	@echo Finished building: $<
 	
 
+ReadSonic/Sonic.o: ../ReadSonic/Sonic.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 Servo/SERVO.o: ../Servo/SERVO.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+VehicleControl/Vehicle_Control.o: ../VehicleControl/Vehicle_Control.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

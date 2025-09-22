@@ -126,10 +126,10 @@
     <Compile Include="BSW\ADC_Init.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="BSW\Ultrasonic.h">
+    <Compile Include="BSW\Sonic_Init.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="BSW\Ultrasonic.c">
+    <Compile Include="BSW\Sonic_Init.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="BSW\GPIO_Init.c">
@@ -159,10 +159,22 @@
     <Compile Include="ReadAdc\ADC.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="ReadSonic\Sonic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ReadSonic\Sonic.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Servo\SERVO.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Servo\SERVO.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="VehicleControl\Vehicle_Control.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="VehicleControl\Vehicle_Control.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
