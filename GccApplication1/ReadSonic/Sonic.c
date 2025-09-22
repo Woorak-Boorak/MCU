@@ -20,7 +20,7 @@ volatile uint8_t g_is_measured[NUM_SENSORS] = {0};
 volatile uint16_t distance_cm[NUM_SENSORS] = {0};
 	
 
-void Sonic_Trigger()
+void Read_Sonic()
 {
 	//(TRIG: PD0)
 	PORTD |= (1 << PORTD0);

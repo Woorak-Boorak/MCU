@@ -6,35 +6,15 @@
  */ 
 #include "ADC.h"
 
-#define LIGHT 2
-#define STEER 3
-#define MOTOR 4
-#define BREAK 5
+volatile uint16_t steer;
+volatile uint16_t motor;
+volatile uint16_t brek;
+volatile uint16_t light;
+volatile uint8_t current_channel = STEER;  // 시작: ADC3
 
-static volatile uint16_t steer;
-static volatile uint16_t motor;
-static volatile uint16_t brek;
-static volatile uint16_t light;
-static volatile uint8_t current_channel = STEER;  // 시작: ADC3
 
 void ADC_Start(){
 	ADCSRA |= (1 << ADSC);
-}
-
-uint16_t ADC_GetSteer() {
-	return steer;
-}
-
-uint16_t ADC_GetMotor() {
-	return motor;
-}
-
-uint16_t ADC_GetBreak() {
-	return brek;
-}
-
-uint16_t ADC_GetLight() {
-	return light;
 }
 
 ISR(ADC_vect) {

@@ -5,12 +5,13 @@
  *  Author: kym11
  */ 
 
+#include "Vehicle_Control.h"
 
-#ifndef VEHICLE_CONTROL_H_
-#define VEHICLE_CONTROL_H_
+void Steering_Control(uint16_t steer){
+	
+}
 
-
-
-
-
-#endif /* VEHICLE_CONTROL_H_ */
+void Light_Control(uint16_t light){
+	if(light <= BRIGHT) PORTB |= (1<<5);
+	else PORTB &= (1<<5);
+}

@@ -150,6 +150,12 @@
     <Compile Include="BSW\Servo_Init.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="BSW\UART.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BSW\UART.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>

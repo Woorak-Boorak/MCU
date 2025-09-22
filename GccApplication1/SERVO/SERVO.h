@@ -2,7 +2,7 @@
 #define SERVO_H_
 
 #include <avr/io.h>
-#include "../ReadAdc/ADC.h"
+#include <stdint.h>
 
 void Servo_SetAngle();
 

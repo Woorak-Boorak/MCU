@@ -15,9 +15,10 @@ main.d main.o: .././main.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  .././BSW/ISR.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- .././BSW/ADC_Init.h .././BSW/Servo_Init.h .././BSW/GPIO_Init.h \
- .././ReadAdc/ADC.h .././Servo/SERVO.h .././Servo/../ReadAdc/ADC.h \
- .././BSW/Sonic_Init.h .././ReadSonic/Sonic.h
+ .././BSW/UART.h .././BSW/../ReadSonic/Sonic.h .././BSW/ADC_Init.h \
+ .././BSW/Servo_Init.h .././BSW/GPIO_Init.h .././ReadAdc/ADC.h \
+ .././Servo/SERVO.h .././BSW/Sonic_Init.h .././ReadSonic/Sonic.h \
+ .././VehicleControl/Vehicle_Control.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -51,6 +52,10 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
+.././BSW/UART.h:
+
+.././BSW/../ReadSonic/Sonic.h:
+
 .././BSW/ADC_Init.h:
 
 .././BSW/Servo_Init.h:
@@ -61,8 +66,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 .././Servo/SERVO.h:
 
-.././Servo/../ReadAdc/ADC.h:
-
 .././BSW/Sonic_Init.h:
 
 .././ReadSonic/Sonic.h:
+
+.././VehicleControl/Vehicle_Control.h:

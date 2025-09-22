@@ -12,6 +12,8 @@ BSW\ISR.c
 
 BSW\Servo_Init.c
 
+BSW\UART.c
+
 main.c
 
 ReadAdc\ADC.c

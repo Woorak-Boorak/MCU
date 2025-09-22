@@ -9,8 +9,12 @@
 #ifndef VEHICLE_CONTROL_H_
 #define VEHICLE_CONTROL_H_
 
+#define BRIGHT 512
 
+#include <avr/io.h>
+#include <stdint.h>
 
-
+void Steering_Control(uint16_t steer);
+void Light_Control(uint16_t light);
 
 #endif /* VEHICLE_CONTROL_H_ */
