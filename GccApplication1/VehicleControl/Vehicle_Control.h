@@ -14,6 +14,7 @@
 #include <avr/io.h>
 #include <stdint.h>
 
+void Speed_Control(int16_t speed);
 void Steering_Control(uint16_t steer);
 void Light_Control(uint16_t light);
 

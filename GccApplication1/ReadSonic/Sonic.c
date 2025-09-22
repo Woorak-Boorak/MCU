@@ -26,6 +26,14 @@ void Read_Sonic()
 	PORTD |= (1 << PORTD2);
 	_delay_us(10);
 	PORTD &= ~(1 << PORTD2);
+	//(TRIG: PD0)
+	PORTD |= (1 << PORTD4);
+	_delay_us(10);
+	PORTD &= ~(1 << PORTD4);
+	//(TRIG: PD0)
+	PORTD |= (1 << PORTD6);
+	_delay_us(10);
+	PORTD &= ~(1 << PORTD6);	
 }
 
 void GetDistance(int index){
@@ -34,10 +42,6 @@ void GetDistance(int index){
 		// 타이머 1의 Prescaler가 8이므로 1틱 = 0.5us
 		distance_cm[index] = (uint16_t)((unsigned long)g_pulse_duration[index] * 5 / 58 / 10);
 		g_is_measured[index] = 0;
-		if(distance_cm[0] > 0 && distance_cm[0] < DISTANCE_TH)
-		PORTB |= (1 << PORTB5);
-		else
-		PORTB &= ~(1 << PORTB5);
 	}
 }
 

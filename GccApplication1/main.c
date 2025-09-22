@@ -41,6 +41,8 @@ void task_60ms() {
 
 void task_1000ms() {
 	UART_TransmitADC(light);
-	UART_TransmitADC(distance_cm[0]);	
-	//Light_Control(light);
+	UART_TransmitADC(distance_cm[0]);
+	UART_TransmitADC(distance_cm[1]);
+	UART_TransmitADC(distance_cm[2]);	
+	Light_Control(light);
 }

@@ -7,6 +7,10 @@
 
 #include "Vehicle_Control.h"
 
+void Speed_Control(int16_t speed){
+	
+}
+
 void Steering_Control(uint16_t steer){
 	
 }
