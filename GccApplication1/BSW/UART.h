@@ -11,8 +11,10 @@
 
 #include "../ReadSonic/Sonic.h"
 #include <avr/io.h>
+#include "stdlib.h"
 
 void UART_Init(uint16_t baud);
 void UART_Transmit(char data);
+void UART_TransmitADC(uint16_t data);
 
 #endif /* UART_H_ */

@@ -13,5 +13,5 @@ void Steering_Control(uint16_t steer){
 
 void Light_Control(uint16_t light){
 	if(light <= BRIGHT) PORTB |= (1<<5);
-	else PORTB &= (1<<5);
+	else PORTB &= ~(1<<5);
 }

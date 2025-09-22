@@ -11,7 +11,7 @@
 #include "BSW/Sonic_Init.h"
 #include "ReadSonic/Sonic.h"
 #include "VehicleControl/Vehicle_Control.h"
-
+#include <stdlib.h>
 
 int main(void)
 {
@@ -36,10 +36,11 @@ void task_20ms(){
 }
 
 void task_60ms() {
-	//Read_Sonic();
+	Read_Sonic();
 }
 
 void task_1000ms() {
-	UART_Transmit('a');
-	Light_Control(light);
+	UART_TransmitADC(light);
+	UART_TransmitADC(distance_cm[0]);	
+	//Light_Control(light);
 }

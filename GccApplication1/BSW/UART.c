@@ -22,3 +22,16 @@ void UART_Transmit(char data){
 	while (!(UCSR0A & (1 << UDRE0)));
 	UDR0 = data;
 }
+
+void UART_TransmitADC(uint16_t data){
+    char buffer[6]; // 1024는 4자리 숫자 + NULL 문자('\0')를 위해 넉넉하게 6칸 할당
+    // itoa(변환할 숫자, 저장할 버퍼, 진수(10진수));
+    itoa(data, buffer, 10);
+    // 변환된 문자열을 끝까지 한 글자씩 전송
+    for (int i = 0; buffer[i] != '\0'; i++)
+    {
+	    UART_Transmit(buffer[i]);
+    }
+    UART_Transmit('\n');
+    UART_Transmit('\r');
+}
