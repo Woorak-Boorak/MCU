@@ -34,3 +34,9 @@ void Servo_SetAngle(uint16_t steer) {
 	// 두 서보모터가 동일하게 움직이므로 OCR1A, OCR1B에 같은 값을 설정
 	OCR1A = ocr_value;
 }
+
+void Motor_Speed(uint16_t speed, uint16_t brek){
+	if(speed > brek)	speed = speed - brek;
+	else speed = 0;
+	OCR1B = ((uint32_t)speed) * 39999 / 1024;
+}

@@ -33,6 +33,7 @@ void task_5ms() {
 
 void task_20ms(){
 	Steering_Control(steer);
+	Motor_Speed(motor, brek);
 }
 
 void task_60ms() {
@@ -41,10 +42,12 @@ void task_60ms() {
 }
 
 void task_1000ms() {
-	UART_TransmitADC(light);
-	UART_TransmitADC(distance_cm[0]);
-	UART_TransmitADC(distance_cm[1]);
-	UART_TransmitADC(distance_cm[2]);
+	UART_TransmitADC(motor);
+	UART_TransmitADC(steer);
+	UART_TransmitADC(brek);
+	//UART_TransmitADC(distance_cm[0]);
+	//UART_TransmitADC(distance_cm[1]);
+	//UART_TransmitADC(distance_cm[2]);
 	UART_TransmitADC(mode);	
 	
 	Light_Control(light);

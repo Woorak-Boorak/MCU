@@ -14,7 +14,7 @@ void Servo_Init(void) {
 
 	// TCCR1A: 비반전(non-inverting) PWM 모드 설정 (COM1A1/COM1B1)
 	//         Fast PWM, TOP=ICR1 모드 설정 (WGM11)
-	TCCR1A = (1 << COM1A1) | (1 << COM1B1) | (1 << WGM11);
+	TCCR1A = (1 << COM1A1) | (1 << COM1B0) | (1 << COM1B1) | (1 << WGM11);
 
 	// TCCR1B: Fast PWM, TOP=ICR1 모드 설정 (WGM13, WGM12)
 	//         8분주(Prescaler 8) 설정 (CS11)

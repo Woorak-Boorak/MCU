@@ -29,7 +29,7 @@ ISR(ADC_vect) {
 	else if(current_channel == MOTOR) current_channel = BREAK;
 	else if(current_channel == BREAK) current_channel = LIGHT;
 	else current_channel = STEER;
-
+	
 	// ADMUX 업데이트
 	ADMUX = (1 << REFS0) | (current_channel & 0x07);
 }
