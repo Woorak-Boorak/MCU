@@ -48,13 +48,15 @@ void task_1000ms() {
 	UART_Transmit('\n');
 	UART_Transmit('\r');//구분선
 	
-	UART_TransmitADC(motor);
-	UART_TransmitADC(steer);
-	UART_TransmitADC(brek);
-	//UART_TransmitADC(distance_cm[0]);
-	//UART_TransmitADC(distance_cm[1]);
-	//UART_TransmitADC(distance_cm[2]);
+	//UART_TransmitADC(motor);
+	//UART_TransmitADC(steer);
+	//UART_TransmitADC(brek);
+	UART_TransmitADC(distance_cm[0]);
+	UART_TransmitADC(distance_cm[1]);
+	UART_TransmitADC(distance_cm[2]);
 	UART_TransmitADC(mode);	
+	UART_Transmit('\n');
+	UART_Transmit('\r');
 	
 	//버튼 디버깅용
 	UART_Transmit('\n');

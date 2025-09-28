@@ -27,9 +27,9 @@ void Read_Sonic()
 	_delay_us(10);
 	PORTD &= ~(1 << PORTD2);
 	//(TRIG: PD0)
-	/*PORTD |= (1 << PORTD4);
+	PORTD |= (1 << PORTD4);
 	_delay_us(10);
-	PORTD &= ~(1 << PORTD4);*/
+	PORTD &= ~(1 << PORTD4);
 	//(TRIG: PD0)
 	PORTD |= (1 << PORTD6);
 	_delay_us(10);

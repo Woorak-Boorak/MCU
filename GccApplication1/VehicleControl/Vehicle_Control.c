@@ -72,7 +72,6 @@ void Steering_Control(uint16_t steer){
 			Servo_SetAngle(steer);
 			break;
 		case EMERGENCY_LEFT:
-			UART_Transmit('s');	
 			Servo_SetAngle(GORIGHT);
 			break;
 		case EMERGENCY_RIGHT:
