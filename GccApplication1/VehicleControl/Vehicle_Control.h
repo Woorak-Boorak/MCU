@@ -20,6 +20,11 @@
 
 #include <avr/io.h>
 #include <stdint.h>
+#include "Vehicle_Control.h"
+#include "../Servo/SERVO.h"
+#include "../BSW/UART.h"
+#include "../ReadAdc/ADC.h"
+#include "../LCDControl/LCD.h"
 
 extern uint8_t mode;
 

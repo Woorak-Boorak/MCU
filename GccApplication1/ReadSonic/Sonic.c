@@ -6,7 +6,7 @@
  */ 
 
 #include "Sonic.h"
-#include "../BSW/UART.h"
+
 #define LEFT 0
 #define CENTER 1
 #define RIGHT 2

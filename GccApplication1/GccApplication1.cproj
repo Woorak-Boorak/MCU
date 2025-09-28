@@ -156,6 +156,18 @@
     <Compile Include="BSW\UART.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="LCDControl\LCD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LCDControl\LCD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LCDControl\LCD_Converter.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LCDControl\LCD_Converter.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
@@ -187,6 +199,7 @@
   <ItemGroup>
     <Folder Include="MotorControl" />
     <Folder Include="BSW" />
+    <Folder Include="LCDControl" />
     <Folder Include="ReadSonic" />
     <Folder Include="ReadAdc" />
     <Folder Include="Servo" />

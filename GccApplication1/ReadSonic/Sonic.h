@@ -14,6 +14,8 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 #include "../VehicleControl/Vehicle_Control.h"
+#include "../BSW/UART.h"
+#include "../LCDControl/LCD.h"
 
 extern volatile uint16_t distance_cm[NUM_SENSORS];
 

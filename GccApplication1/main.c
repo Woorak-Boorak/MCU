@@ -11,6 +11,8 @@
 #include "BSW/Sonic_Init.h"
 #include "ReadSonic/Sonic.h"
 #include "VehicleControl/Vehicle_Control.h"
+#include "LCDControl/LCD.h"
+#include "LCDControl/LCD_Converter.h"
 #include <stdlib.h>
 
 int main(void)
@@ -21,6 +23,8 @@ int main(void)
 	Servo_Init();
 	GPIO_Init();
 	Sonic_Init();
+	lcd_init();
+	lcd_clear();
 	while (1) 
 	{
 	}
@@ -82,4 +86,6 @@ void task_1000ms() {
 	}
 	UART_Transmit('\n'); 
 	UART_Transmit('\r');//±¸ºÐ¼±
+	
+
 }

@@ -16,9 +16,15 @@ ReadSonic/Sonic.d ReadSonic/Sonic.o: ../ReadSonic/Sonic.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  ../ReadSonic/../VehicleControl/Vehicle_Control.h \
- ../ReadSonic/../BSW/UART.h ../ReadSonic/../BSW/../ReadSonic/Sonic.h \
+ ../ReadSonic/../VehicleControl/Vehicle_Control.h \
+ ../ReadSonic/../VehicleControl/../Servo/SERVO.h \
+ ../ReadSonic/../VehicleControl/../BSW/UART.h \
+ ../ReadSonic/../VehicleControl/../BSW/../ReadSonic/Sonic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
+ ../ReadSonic/../VehicleControl/../ReadAdc/ADC.h \
+ ../ReadSonic/../VehicleControl/../LCDControl/LCD.h \
+ ../ReadSonic/../BSW/UART.h ../ReadSonic/../LCDControl/LCD.h
 
 ../ReadSonic/Sonic.h:
 
@@ -54,10 +60,22 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../ReadSonic/../VehicleControl/Vehicle_Control.h:
 
-../ReadSonic/../BSW/UART.h:
+../ReadSonic/../VehicleControl/Vehicle_Control.h:
 
-../ReadSonic/../BSW/../ReadSonic/Sonic.h:
+../ReadSonic/../VehicleControl/../Servo/SERVO.h:
+
+../ReadSonic/../VehicleControl/../BSW/UART.h:
+
+../ReadSonic/../VehicleControl/../BSW/../ReadSonic/Sonic.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
+
+../ReadSonic/../VehicleControl/../ReadAdc/ADC.h:
+
+../ReadSonic/../VehicleControl/../LCDControl/LCD.h:
+
+../ReadSonic/../BSW/UART.h:
+
+../ReadSonic/../LCDControl/LCD.h:

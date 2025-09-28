@@ -14,6 +14,10 @@ BSW\Servo_Init.c
 
 BSW\UART.c
 
+LCDControl\LCD.c
+
+LCDControl\LCD_Converter.c
+
 main.c
 
 ReadAdc\ADC.c

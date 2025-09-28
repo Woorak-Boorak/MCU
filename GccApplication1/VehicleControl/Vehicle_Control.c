@@ -4,11 +4,9 @@
  * Created: 2025-09-22 오후 3:37:16
  *  Author: kym11
  */ 
-
+int previous_mode = 0xFF;
+int previous_mode;
 #include "Vehicle_Control.h"
-#include "../Servo/SERVO.h"
-#include "../BSW/UART.h"
-#include "../ReadAdc/ADC.h"
 
 uint8_t mode = 0;
 
@@ -47,23 +45,34 @@ void check_buttons(void) {
 }
 
 void Speed_Control(uint16_t speed, uint16_t brek){
-	switch(mode){
-		case NONE:
-			Motor_Speed(speed,brek);
-			break;
-		case EMERGENCY_LEFT:
-			Motor_Speed(speed,brek);
-			break;
-		case EMERGENCY_RIGHT:
-			Motor_Speed(speed,brek);
-			break;
-		case EMERGENCY_CENTER:
-			Motor_Speed(0,0);
-			break;
-		default:
-		//do nothing
-		break;
-	}
+	 if(mode != previous_mode) {
+		 switch(mode){
+			 case NONE:
+			 // mode가 NONE으로 바뀌는 순간에 딱 한 번만 화면을 지웁니다.
+			 lcd_clear();
+			 break;
+			 case EMERGENCY_LEFT:
+			 lcd_EMERGENCY_LEFT();
+			 break;
+			 case EMERGENCY_RIGHT:
+			 lcd_EMERGENCY_RIGHT();
+			 break;
+			 case EMERGENCY_CENTER:
+			 lcd_EMERGENCY_CENTER();
+			 break;
+			 default:
+			 // do nothing
+			 break;
+		 }
+		 previous_mode = mode; // 현재 모드를 이전 모드로 기록
+	 }
+
+	 // 모터 제어는 LCD 업데이트와 상관없이 항상 실행
+	 if (mode == EMERGENCY_CENTER) {
+		 Motor_Speed(0, 0);
+		 } else {
+		 Motor_Speed(speed, brek);
+	 }
 }
 
 void Steering_Control(uint16_t steer){

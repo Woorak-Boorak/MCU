@@ -16,6 +16,13 @@ BSW/UART.d BSW/UART.o: ../BSW/UART.c ../BSW/UART.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  ../BSW/../ReadSonic/../VehicleControl/Vehicle_Control.h \
+ ../BSW/../ReadSonic/../VehicleControl/Vehicle_Control.h \
+ ../BSW/../ReadSonic/../VehicleControl/../Servo/SERVO.h \
+ ../BSW/../ReadSonic/../VehicleControl/../BSW/UART.h \
+ ../BSW/../ReadSonic/../VehicleControl/../ReadAdc/ADC.h \
+ ../BSW/../ReadSonic/../VehicleControl/../LCDControl/LCD.h \
+ ../BSW/../ReadSonic/../BSW/UART.h \
+ ../BSW/../ReadSonic/../LCDControl/LCD.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h
 
@@ -54,6 +61,20 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
 ../BSW/../ReadSonic/../VehicleControl/Vehicle_Control.h:
+
+../BSW/../ReadSonic/../VehicleControl/Vehicle_Control.h:
+
+../BSW/../ReadSonic/../VehicleControl/../Servo/SERVO.h:
+
+../BSW/../ReadSonic/../VehicleControl/../BSW/UART.h:
+
+../BSW/../ReadSonic/../VehicleControl/../ReadAdc/ADC.h:
+
+../BSW/../ReadSonic/../VehicleControl/../LCDControl/LCD.h:
+
+../BSW/../ReadSonic/../BSW/UART.h:
+
+../BSW/../ReadSonic/../LCDControl/LCD.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
