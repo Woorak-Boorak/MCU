@@ -22,6 +22,11 @@
 #include <stdint.h>
 
 extern uint8_t mode;
+
+#define NUM_BUTTONS 5
+extern uint8_t button_active[NUM_BUTTONS]; // 5개 버튼의 ON/OFF 상태 저장
+void check_buttons(void); // 버튼 상태를 업데이트하는 함수
+
 void Speed_Control(int16_t speed);
 void Steering_Control(uint16_t steer);
 void Break_Control(uint16_t brek);

@@ -7,10 +7,10 @@
 #ifndef ADC_H_
 #define ADC_H_
 
-#define LIGHT 2
-#define STEER 3
-#define MOTOR 4
-#define BREAK 5
+#define BREAK 0     // PC0 (ADC0) - 23번핀
+#define MOTOR 1     // PC1 (ADC1) - 24번핀
+#define STEER 2     // PC2 (ADC2) - 25번핀
+#define BUTTON 3    // PC3 (ADC3) - 26번핀 (새로 추가)
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -19,7 +19,7 @@
 extern volatile uint16_t steer;
 extern volatile uint16_t motor;
 extern volatile uint16_t brek;
-extern volatile uint16_t light;
+extern volatile uint16_t button_val;
 
 void ADC_Start();
 

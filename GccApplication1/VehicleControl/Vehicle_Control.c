@@ -8,7 +8,43 @@
 #include "Vehicle_Control.h"
 #include "../Servo/SERVO.h"
 #include "../BSW/UART.h"
+#include "../ReadAdc/ADC.h"
+
 uint8_t mode = 0;
+
+uint8_t button_active[NUM_BUTTONS] = {0}; // 버튼 상태 저장 배열 (모두 OFF로 시작)
+static uint8_t last_detected_button = 0;   // 중복 입력을 막기 위한 변수
+
+// 버튼 임계값
+#define BTN_1_LOW 150
+#define BTN_1_HIGH 230
+#define BTN_2_LOW 320
+#define BTN_2_HIGH 410
+#define BTN_3_LOW 500
+#define BTN_3_HIGH 590
+#define BTN_4_LOW 710
+#define BTN_4_HIGH 790
+#define BTN_5_LOW 980
+
+static uint8_t get_button_from_adc(uint16_t adc_val) {
+	if (adc_val > BTN_5_LOW) return 5;
+	if (adc_val >= BTN_4_LOW && adc_val <= BTN_4_HIGH) return 4;
+	if (adc_val >= BTN_3_LOW && adc_val <= BTN_3_HIGH) return 3;
+	if (adc_val >= BTN_2_LOW && adc_val <= BTN_2_HIGH) return 2;
+	if (adc_val >= BTN_1_LOW && adc_val <= BTN_1_HIGH) return 1;
+	return 0; // 아무것도 안 눌림
+}
+
+void check_buttons(void) {
+	uint8_t current_button = get_button_from_adc(button_val);
+
+	if (current_button != last_detected_button) { 
+		if (current_button != 0) {
+			button_active[current_button - 1] = !button_active[current_button - 1];
+		}
+		last_detected_button = current_button;
+	}
+}
 
 void Speed_Control(int16_t speed){
 	switch(mode){

@@ -39,9 +39,15 @@ void task_20ms(){
 void task_60ms() {
 	Read_Sonic();
 	ModeUdate();
+	check_buttons();
 }
 
 void task_1000ms() {
+	UART_Transmit('\n');
+	UART_Transmit('\r');
+	UART_Transmit('\n');
+	UART_Transmit('\r');//구분선
+	
 	UART_TransmitADC(motor);
 	UART_TransmitADC(steer);
 	UART_TransmitADC(brek);
@@ -50,5 +56,28 @@ void task_1000ms() {
 	//UART_TransmitADC(distance_cm[2]);
 	UART_TransmitADC(mode);	
 	
-	Light_Control(light);
+	//버튼 디버깅용
+	UART_Transmit('\n');
+	UART_Transmit('\r');
+	UART_TransmitADC(button_val);
+	
+	for (int i = 0; i < NUM_BUTTONS; i++) {
+		UART_Transmit('B');
+		UART_Transmit('0' + (5 - i)); // B1, B2...
+		UART_Transmit(':');
+		UART_Transmit(' ');
+
+		if (button_active[4 - i]) {
+			UART_Transmit('O');
+			UART_Transmit('N');
+			} else {
+			UART_Transmit('O');
+			UART_Transmit('F');
+			UART_Transmit('F');
+		}
+		UART_Transmit('\n');
+		UART_Transmit('\r');
+	}
+	UART_Transmit('\n'); 
+	UART_Transmit('\r');//구분선
 }
