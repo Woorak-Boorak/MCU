@@ -46,19 +46,19 @@ void check_buttons(void) {
 	}
 }
 
-void Speed_Control(int16_t speed){
+void Speed_Control(uint16_t speed, uint16_t brek){
 	switch(mode){
 		case NONE:
-			Servo_SetAngle(speed);
+			Motor_Speed(speed,brek);
 			break;
 		case EMERGENCY_LEFT:
-			Servo_SetAngle(GORIGHT);
+			Motor_Speed(speed,brek);
 			break;
 		case EMERGENCY_RIGHT:
-			Servo_SetAngle(GOLEFT);
+			Motor_Speed(speed,brek);
 			break;
 		case EMERGENCY_CENTER:
-			Servo_SetAngle(speed);
+			Motor_Speed(0,0);
 			break;
 		default:
 		//do nothing

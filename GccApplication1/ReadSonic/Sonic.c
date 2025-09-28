@@ -63,7 +63,7 @@ void GetDistance(int index){
 }
 
 void ModeUdate(){
-	if(distance_cm[0] > 10 &&  distance_cm[2] > 10)	mode = 0;
+	if(distance_cm[0] > 10 && distance_cm[1] > 10 && distance_cm[2] > 10)	mode = 0;
 }
 
 // --- 인터럽트 서비스 루틴 (ISRs) ---

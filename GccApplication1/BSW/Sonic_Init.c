@@ -14,6 +14,5 @@ void Sonic_Init(void)
 
 	// 4. ECHO 핀에 해당하는 인터럽트 마스크 설정
 	PCMSK2 |= (1 << PCINT19) | (1 << PCINT21) | (1 << PCINT23); // PD1, PD3, PD7
-	
 	// 타이머 1 설정은 Servo_Init()에서 이미 완벽하게 되어 있으므로 여기서 할 필요가 없네.
 }

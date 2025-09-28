@@ -33,7 +33,7 @@ void task_5ms() {
 
 void task_20ms(){
 	Steering_Control(steer);
-	Motor_Speed(motor, brek);
+	Speed_Control(motor, brek);
 }
 
 void task_60ms() {

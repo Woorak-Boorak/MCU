@@ -27,7 +27,7 @@ extern uint8_t mode;
 extern uint8_t button_active[NUM_BUTTONS]; // 5개 버튼의 ON/OFF 상태 저장
 void check_buttons(void); // 버튼 상태를 업데이트하는 함수
 
-void Speed_Control(int16_t speed);
+void Speed_Control(uint16_t speed, uint16_t brek);
 void Steering_Control(uint16_t steer);
 void Break_Control(uint16_t brek);
 void Light_Control(uint16_t light);
