@@ -1,18 +1,6 @@
 #define F_CPU 16000000L
 #include <avr/io.h>
-#include <util/delay.h>
-#include "BSW/ISR.h"
-#include "BSW/UART.h"
-#include "BSW/ADC_Init.h"
-#include "BSW/Servo_Init.h"
-#include "BSW/GPIO_Init.h"
-#include "ReadAdc/ADC.h"
-#include "Servo/SERVO.h"
-#include "BSW/Sonic_Init.h"
-#include "ReadSonic/Sonic.h"
-#include "VehicleControl/Vehicle_Control.h"
-#include "LCDControl/LCD.h"
-#include "LCDControl/LCD_Converter.h"
+#include "Common/project.h"
 #include <stdlib.h>
 
 int main(void)
@@ -31,21 +19,19 @@ int main(void)
 	return 1;
 }
 
-void task_5ms() {
+void task_5ms(void) {
 	ADC_Start();
 }
 
-void task_20ms(){
+void task_20ms(void){
 	Steering_Control(steer);
 	Speed_Control(motor, brek);
 }
 
-void task_60ms() {
-	Read_Sonic();
-	ModeUdate();
-	check_buttons();
+void task_60ms(void) {
+	Sonic_Task();
 }
 
-void task_1000ms() {
-	
+void task_1000ms(void) {
+	// no-op
 }

@@ -156,6 +156,12 @@
     <Compile Include="BSW\UART.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Common\defs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Common\project.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="LCDControl\LCD.c">
       <SubType>compile</SubType>
     </Compile>
@@ -171,6 +177,12 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MotorControl\Motor_Control.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotorControl\Motor_Control.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="ReadAdc\ADC.c">
       <SubType>compile</SubType>
     </Compile>
@@ -183,12 +195,6 @@
     <Compile Include="ReadSonic\Sonic.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Servo\SERVO.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Servo\Servo.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="VehicleControl\Vehicle_Control.c">
       <SubType>compile</SubType>
     </Compile>
@@ -199,11 +205,11 @@
   <ItemGroup>
     <Folder Include="MotorControl" />
     <Folder Include="BSW" />
+    <Folder Include="Common" />
     <Folder Include="LCDControl" />
     <Folder Include="ReadSonic" />
     <Folder Include="ReadAdc" />
-    <Folder Include="Servo" />
     <Folder Include="VehicleControl" />
   </ItemGroup>
-  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\Vs\Compiler.targets" />
 </Project>

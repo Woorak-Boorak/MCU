@@ -1,4 +1,6 @@
-﻿#include "Sonic_Init.h"
+﻿#include <avr/io.h>
+#include <avr/interrupt.h>
+#include "Sonic_Init.h"
 
 void Sonic_Init(void)
 {

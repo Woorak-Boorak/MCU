@@ -10,27 +10,17 @@ main.d main.o: .././main.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\version.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- .././BSW/ISR.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- .././BSW/UART.h .././BSW/../ReadSonic/Sonic.h \
- .././BSW/../ReadSonic/../VehicleControl/Vehicle_Control.h \
- .././BSW/../ReadSonic/../VehicleControl/Vehicle_Control.h \
- .././BSW/../ReadSonic/../VehicleControl/../Servo/SERVO.h \
- .././BSW/../ReadSonic/../VehicleControl/../BSW/UART.h \
- .././BSW/../ReadSonic/../VehicleControl/../ReadAdc/ADC.h \
- .././BSW/../ReadSonic/../VehicleControl/../LCDControl/LCD.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sleep.h \
- .././BSW/../ReadSonic/../BSW/UART.h \
- .././BSW/../ReadSonic/../LCDControl/LCD.h \
+ .././Common/project.h .././Common/defs.h .././Common/../BSW/ISR.h \
+ .././Common/../BSW/UART.h .././Common/../BSW/ADC_Init.h \
+ .././Common/../BSW/Servo_Init.h .././Common/../BSW/GPIO_Init.h \
+ .././Common/../BSW/Sonic_Init.h .././Common/../ReadAdc/ADC.h \
+ .././Common/../ReadSonic/Sonic.h \
+ .././Common/../MotorControl/Motor_Control.h \
+ .././Common/../LCDControl/LCD.h \
+ .././Common/../VehicleControl/Vehicle_Control.h \
+ .././Common/../VehicleControl/../Common/defs.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
- .././BSW/ADC_Init.h .././BSW/Servo_Init.h .././BSW/GPIO_Init.h \
- .././ReadAdc/ADC.h .././Servo/SERVO.h .././BSW/Sonic_Init.h \
- .././ReadSonic/Sonic.h .././VehicleControl/Vehicle_Control.h \
- .././LCDControl/LCD.h .././LCDControl/LCD_Converter.h
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -54,58 +44,34 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h:
+.././Common/project.h:
 
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
+.././Common/defs.h:
 
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
+.././Common/../BSW/ISR.h:
 
-.././BSW/ISR.h:
+.././Common/../BSW/UART.h:
 
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
+.././Common/../BSW/ADC_Init.h:
 
-.././BSW/UART.h:
+.././Common/../BSW/Servo_Init.h:
 
-.././BSW/../ReadSonic/Sonic.h:
+.././Common/../BSW/GPIO_Init.h:
 
-.././BSW/../ReadSonic/../VehicleControl/Vehicle_Control.h:
+.././Common/../BSW/Sonic_Init.h:
 
-.././BSW/../ReadSonic/../VehicleControl/Vehicle_Control.h:
+.././Common/../ReadAdc/ADC.h:
 
-.././BSW/../ReadSonic/../VehicleControl/../Servo/SERVO.h:
+.././Common/../ReadSonic/Sonic.h:
 
-.././BSW/../ReadSonic/../VehicleControl/../BSW/UART.h:
+.././Common/../MotorControl/Motor_Control.h:
 
-.././BSW/../ReadSonic/../VehicleControl/../ReadAdc/ADC.h:
+.././Common/../LCDControl/LCD.h:
 
-.././BSW/../ReadSonic/../VehicleControl/../LCDControl/LCD.h:
+.././Common/../VehicleControl/Vehicle_Control.h:
 
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sleep.h:
-
-.././BSW/../ReadSonic/../BSW/UART.h:
-
-.././BSW/../ReadSonic/../LCDControl/LCD.h:
+.././Common/../VehicleControl/../Common/defs.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
-
-.././BSW/ADC_Init.h:
-
-.././BSW/Servo_Init.h:
-
-.././BSW/GPIO_Init.h:
-
-.././ReadAdc/ADC.h:
-
-.././Servo/SERVO.h:
-
-.././BSW/Sonic_Init.h:
-
-.././ReadSonic/Sonic.h:
-
-.././VehicleControl/Vehicle_Control.h:
-
-.././LCDControl/LCD.h:
-
-.././LCDControl/LCD_Converter.h:

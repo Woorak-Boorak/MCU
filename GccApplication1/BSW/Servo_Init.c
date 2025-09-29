@@ -5,6 +5,7 @@
  *  Author: kym11
  */ 
 
+#include <avr/io.h>
 #include "Servo_Init.h"
 #define ICR1_TOP 39999   // 20ms 주기 (50Hz)
 

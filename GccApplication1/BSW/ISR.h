@@ -8,13 +8,11 @@
 
 #ifndef ISR_H_
 #define ISR_H_
-#include <avr/io.h>
-#include <avr/interrupt.h>
 
-extern void ISR_Init(void);
-extern void task_1ms(void);
-extern void task_60ms(void);
-extern void task_1000ms(void);	
-extern void task_2000ms(void);	
+void ISR_Init(void);
+void task_5ms(void);
+void task_20ms(void);
+void task_60ms(void);
+void task_1000ms(void);
 
 #endif /* ISR_H_ */

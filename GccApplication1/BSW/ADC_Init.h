@@ -7,9 +7,7 @@
 
 #ifndef ADC_INIT_H_
 #define ADC_INIT_H_
-#include <avr/io.h>
 
 void ADC_Init(void);
-
 
 #endif /* ADC_INIT_H_ */

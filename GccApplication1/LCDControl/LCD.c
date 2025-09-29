@@ -4,6 +4,7 @@
  * Created: 2025-09-29 오전 3:33:14
  *  Author: kym11
  */ 
+#include <avr/io.h>
 #include "LCD.h"
 #include <util/delay.h>
 

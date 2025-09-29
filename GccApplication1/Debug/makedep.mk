@@ -20,11 +20,11 @@ LCDControl\LCD_Converter.c
 
 main.c
 
+MotorControl\Motor_Control.c
+
 ReadAdc\ADC.c
 
 ReadSonic\Sonic.c
-
-Servo\SERVO.c
 
 VehicleControl\Vehicle_Control.c
 

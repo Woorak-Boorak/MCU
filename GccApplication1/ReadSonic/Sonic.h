@@ -7,20 +7,11 @@
 #ifndef SONIC_H_
 #define SONIC_H_
 
-#define F_CPU 16000000L
+#include <stdint.h>
+
 #define DISTANCE_TH 6
 #define NUM_SENSORS 3
 
-#include <util/delay.h>
-#include <avr/interrupt.h>
-#include "../VehicleControl/Vehicle_Control.h"
-#include "../BSW/UART.h"
-#include "../LCDControl/LCD.h"
-
-extern volatile uint16_t distance_cm[NUM_SENSORS];
-
-void Read_Sonic();
-void GetDistance();
-void ModeUdate();
+void Sonic_Task(void);
 
 #endif /* SONIC_H_ */

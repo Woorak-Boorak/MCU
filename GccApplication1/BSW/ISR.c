@@ -5,6 +5,8 @@
  *  Author: kym11
  */ 
 
+#include <avr/io.h>
+#include <avr/interrupt.h>
 #include "ISR.h"
 int ms_count = 0;
 

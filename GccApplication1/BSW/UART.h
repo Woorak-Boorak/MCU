@@ -8,10 +8,12 @@
 
 #ifndef UART_H_
 #define UART_H_
+#ifndef F_CPU
+#define F_CPU 16000000UL
+#endif
 
-#include "../ReadSonic/Sonic.h"
+#include <stdint.h>
 #include <avr/io.h>
-#include "stdlib.h"
 
 void UART_Init(uint16_t baud);
 void UART_Transmit(char data);

@@ -5,6 +5,7 @@
  * Author: rakggii
  */
 
+#include <avr/io.h>
 #include "ADC_Init.h"
 
 

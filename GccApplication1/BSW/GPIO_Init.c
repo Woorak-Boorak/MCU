@@ -5,8 +5,9 @@
  *  Author: kym11
  */ 
 
+#include <avr/io.h>
 #include "GPIO_Init.h"
 
-void GPIO_Init(){
+void GPIO_Init(void){
 	DDRB |= (1<<DDB5) | (1<<DDB4) | (1<<DDB3) | (1<<DDB0);
 }

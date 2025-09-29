@@ -35,10 +35,10 @@ LINKER_SCRIPT_DEP:=
 SUBDIRS :=  \
 ../MotorControl \
 ../BSW \
+../Common \
 ../LCDControl \
 ../ReadSonic \
 ../ReadAdc \
-../Servo \
 ../VehicleControl
 
 
@@ -53,9 +53,9 @@ C_SRCS +=  \
 ../LCDControl/LCD.c \
 ../LCDControl/LCD_Converter.c \
 ../main.c \
+../MotorControl/Motor_Control.c \
 ../ReadAdc/ADC.c \
 ../ReadSonic/Sonic.c \
-../Servo/SERVO.c \
 ../VehicleControl/Vehicle_Control.c
 
 
@@ -75,9 +75,9 @@ BSW/UART.o \
 LCDControl/LCD.o \
 LCDControl/LCD_Converter.o \
 main.o \
+MotorControl/Motor_Control.o \
 ReadAdc/ADC.o \
 ReadSonic/Sonic.o \
-Servo/SERVO.o \
 VehicleControl/Vehicle_Control.o
 
 OBJS_AS_ARGS +=  \
@@ -90,9 +90,9 @@ BSW/UART.o \
 LCDControl/LCD.o \
 LCDControl/LCD_Converter.o \
 main.o \
+MotorControl/Motor_Control.o \
 ReadAdc/ADC.o \
 ReadSonic/Sonic.o \
-Servo/SERVO.o \
 VehicleControl/Vehicle_Control.o
 
 C_DEPS +=  \
@@ -105,9 +105,9 @@ BSW/UART.d \
 LCDControl/LCD.d \
 LCDControl/LCD_Converter.d \
 main.d \
+MotorControl/Motor_Control.d \
 ReadAdc/ADC.d \
 ReadSonic/Sonic.d \
-Servo/SERVO.d \
 VehicleControl/Vehicle_Control.d
 
 C_DEPS_AS_ARGS +=  \
@@ -120,9 +120,9 @@ BSW/UART.d \
 LCDControl/LCD.d \
 LCDControl/LCD_Converter.d \
 main.d \
+MotorControl/Motor_Control.d \
 ReadAdc/ADC.d \
 ReadSonic/Sonic.d \
-Servo/SERVO.d \
 VehicleControl/Vehicle_Control.d
 
 OUTPUT_FILE_PATH +=GccApplication1.elf
@@ -202,6 +202,13 @@ LCDControl/LCD_Converter.o: ../LCDControl/LCD_Converter.c
 	@echo Finished building: $<
 	
 
+MotorControl/Motor_Control.o: ../MotorControl/Motor_Control.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 ReadAdc/ADC.o: ../ReadAdc/ADC.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
@@ -210,13 +217,6 @@ ReadAdc/ADC.o: ../ReadAdc/ADC.c
 	
 
 ReadSonic/Sonic.o: ../ReadSonic/Sonic.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-Servo/SERVO.o: ../Servo/SERVO.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
