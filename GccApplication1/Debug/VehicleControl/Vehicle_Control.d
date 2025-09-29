@@ -22,7 +22,8 @@ VehicleControl/Vehicle_Control.d VehicleControl/Vehicle_Control.o: \
  ../VehicleControl/../BSW/../ReadSonic/../LCDControl/LCD.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
- ../VehicleControl/../ReadAdc/ADC.h ../VehicleControl/../LCDControl/LCD.h
+ ../VehicleControl/../ReadAdc/ADC.h ../VehicleControl/../LCDControl/LCD.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sleep.h
 
 ../VehicleControl/Vehicle_Control.h:
 
@@ -75,3 +76,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 ../VehicleControl/../ReadAdc/ADC.h:
 
 ../VehicleControl/../LCDControl/LCD.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sleep.h:

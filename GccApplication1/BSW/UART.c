@@ -35,3 +35,13 @@ void UART_TransmitADC(uint16_t data){
     UART_Transmit('\n');
     UART_Transmit('\r');
 }
+
+//문자열 송신 함수
+void UART_SendString(const char* str){ // cosnt -> str 포인터 내부 값을 수정할 수 없음.
+	while(*str){
+		//문자열 끝인 NULL 까지 주소를 증가 (NULL 은 False 취급)
+		UART_Transmit(*str++);
+	}
+	UART_Transmit('\n');
+	UART_Transmit('\r');
+}

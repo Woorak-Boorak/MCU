@@ -8,5 +8,5 @@
 #include "GPIO_Init.h"
 
 void GPIO_Init(){
-	DDRB |= (1<<5);
+	DDRB |= (1<<DDB5) | (1<<DDB4) | (1<<DDB3) | (1<<DDB0);
 }

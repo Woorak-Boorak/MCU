@@ -1,4 +1,4 @@
-﻿#ifndef SERVO_H_
+#ifndef SERVO_H_
 #define SERVO_H_
 
 #include <avr/io.h>

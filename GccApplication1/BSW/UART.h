@@ -16,5 +16,6 @@
 void UART_Init(uint16_t baud);
 void UART_Transmit(char data);
 void UART_TransmitADC(uint16_t data);
+void UART_SendString(const char* str);
 
 #endif /* UART_H_ */
