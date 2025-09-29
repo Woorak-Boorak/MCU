@@ -6,8 +6,6 @@ BSW\ADC_Init.c
 
 BSW\Sonic_Init.c
 
-BSW\GPIO_Init.c
-
 BSW\ISR.c
 
 BSW\Servo_Init.c

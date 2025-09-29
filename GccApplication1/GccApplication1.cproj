@@ -132,12 +132,6 @@
     <Compile Include="BSW\Sonic_Init.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="BSW\GPIO_Init.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="BSW\GPIO_Init.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="BSW\ISR.c">
       <SubType>compile</SubType>
     </Compile>

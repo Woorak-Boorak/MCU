@@ -18,6 +18,7 @@ volatile uint16_t button_val;
 volatile uint8_t current_channel = STEER;
 static uint8_t button_active[NUM_BUTTONS] = {0};
 
+//ADC값으로부터 몇번 버튼 눌렸는지 확인
 static uint8_t get_button_from_adc(uint16_t adc_val) {
 	if (adc_val > BTN_5_LOW) return BUTTON_PROGRAMOFF;
 	if (adc_val >= BTN_4_LOW && adc_val <= BTN_4_HIGH) return BUTTON_GETOUT;
@@ -27,6 +28,7 @@ static uint8_t get_button_from_adc(uint16_t adc_val) {
 	return 0;
 }
 
+//버튼이 켜졌는지 꺼졌는지 확인
 static void check_buttons(void) {
 	static uint8_t last_detected_button = 0;
 	uint8_t current_button = get_button_from_adc(button_val);
@@ -36,41 +38,43 @@ static void check_buttons(void) {
 			button_active[idx] = !button_active[idx];
 			switch (current_button) {
 				case BUTTON_HOTASS:
-					if (button_active[idx]) UART_SendString("엉뜨를 켰습니다");
-					else UART_SendString("엉뜨를 껐습니다\r\n");
-					break;
+				if (button_active[idx]) UART_SendString("엉뜨를 켰습니다");
+				else UART_SendString("엉뜨를 껐습니다\r\n");
+				break;
 				case BUTTON_AC:
-					if (button_active[idx]) UART_SendString("에어컨을 켰습니다");
-					else UART_SendString("에어컨을 껐습니다\r\n");
-					break;
+				if (button_active[idx]) UART_SendString("에어컨을 켰습니다");
+				else UART_SendString("에어컨을 껐습니다\r\n");
+				break;
 				case BUTTON_SORRY:
-					if (button_active[idx]) UART_SendString("비상등을 켰습니다");
-					else UART_SendString("비상등을 껐습니다\r\n");
-					break;
+				if (button_active[idx]) UART_SendString("비상등을 켰습니다");
+				else UART_SendString("비상등을 껐습니다\r\n");
+				break;
 				case BUTTON_GETOUT:
-					if (button_active[idx]) UART_SendString("상향등을 켰습니다");
-					else UART_SendString("상향등을 껐습니다\r\n");
-					break;
+				if (button_active[idx]) UART_SendString("상향등을 켰습니다");
+				else UART_SendString("상향등을 껐습니다\r\n");
+				break;
 				case BUTTON_PROGRAMOFF:
-					if (button_active[idx]) {
-						UART_SendString("프로그램을 종료하겠습니다\r\n");
-						set_sleep_mode(SLEEP_MODE_PWR_DOWN);
-						sleep_enable();
-						sleep_cpu();
-					}
-					break;
+				if (button_active[idx]) {
+					UART_SendString("프로그램을 종료하겠습니다\r\n");
+					set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+					sleep_enable();
+					sleep_cpu();
+				}
+				break;
 				default:
-					break;
+				break;
 			}
 		}
 		last_detected_button = current_button;
 	}
 }
 
+//ADC변환 시작
 void ADC_Start(void){
 	ADCSRA |= (1 << ADSC);
 }
 
+//5ms마다 하나씩 변환하도록 설정
 ISR(ADC_vect) {
 	if(current_channel == STEER) steer = ADC;
 	else if(current_channel == MOTOR) motor = ADC;

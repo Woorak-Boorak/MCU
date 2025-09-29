@@ -46,7 +46,6 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../BSW/ADC_Init.c \
 ../BSW/Sonic_Init.c \
-../BSW/GPIO_Init.c \
 ../BSW/ISR.c \
 ../BSW/Servo_Init.c \
 ../BSW/UART.c \
@@ -68,7 +67,6 @@ ASM_SRCS +=
 OBJS +=  \
 BSW/ADC_Init.o \
 BSW/Sonic_Init.o \
-BSW/GPIO_Init.o \
 BSW/ISR.o \
 BSW/Servo_Init.o \
 BSW/UART.o \
@@ -83,7 +81,6 @@ VehicleControl/Vehicle_Control.o
 OBJS_AS_ARGS +=  \
 BSW/ADC_Init.o \
 BSW/Sonic_Init.o \
-BSW/GPIO_Init.o \
 BSW/ISR.o \
 BSW/Servo_Init.o \
 BSW/UART.o \
@@ -98,7 +95,6 @@ VehicleControl/Vehicle_Control.o
 C_DEPS +=  \
 BSW/ADC_Init.d \
 BSW/Sonic_Init.d \
-BSW/GPIO_Init.d \
 BSW/ISR.d \
 BSW/Servo_Init.d \
 BSW/UART.d \
@@ -113,7 +109,6 @@ VehicleControl/Vehicle_Control.d
 C_DEPS_AS_ARGS +=  \
 BSW/ADC_Init.d \
 BSW/Sonic_Init.d \
-BSW/GPIO_Init.d \
 BSW/ISR.d \
 BSW/Servo_Init.d \
 BSW/UART.d \
@@ -147,13 +142,6 @@ BSW/ADC_Init.o: ../BSW/ADC_Init.c
 	
 
 BSW/Sonic_Init.o: ../BSW/Sonic_Init.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-BSW/GPIO_Init.o: ../BSW/GPIO_Init.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

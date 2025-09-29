@@ -69,7 +69,6 @@ void Sonic_Task(void){
 	ModeUdate();
 }
 
-// --- 인터럽트 서비스 루틴 (ISRs) ---
 ISR(PCINT2_vect)
 {
 	uint8_t current_pind_state = PIND;

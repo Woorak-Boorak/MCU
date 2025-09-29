@@ -13,6 +13,5 @@ void ISR_Init(void);
 void task_5ms(void);
 void task_20ms(void);
 void task_60ms(void);
-void task_1000ms(void);
 
 #endif /* ISR_H_ */

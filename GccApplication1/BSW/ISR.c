@@ -41,20 +41,13 @@ ISR(TIMER2_COMPA_vect){
 
 	if(ms_count%60==0){
 		task_60ms();
-	}
-	else
-	{
-		//do nothing
-	}
-	
-	if(ms_count%1000==0){
-		task_1000ms();
 		ms_count = 0;
 	}
 	else
 	{
 		//do nothing
 	}
+	
 }
 
 

@@ -20,7 +20,6 @@ void Servo_Init(void) {
 	// TCCR1B: Fast PWM, TOP=ICR1 모드 설정 (WGM13, WGM12)
 	//         8분주(Prescaler 8) 설정 (CS11)
 	TCCR1B = (1 << WGM13) | (1 << WGM12) | (1 << CS11);
-	
 	// ICR1: PWM 주기를 20ms로 설정 (TOP 값)
 	ICR1 = ICR1_TOP;
 }

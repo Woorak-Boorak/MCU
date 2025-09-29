@@ -9,7 +9,6 @@ int main(void)
 	UART_Init(9600);
 	ADC_Init();
 	Servo_Init();
-	GPIO_Init();
 	Sonic_Init();
 	lcd_init();
 	lcd_clear();
@@ -30,8 +29,4 @@ void task_20ms(void){
 
 void task_60ms(void) {
 	Sonic_Task();
-}
-
-void task_1000ms(void) {
-	// no-op
 }
