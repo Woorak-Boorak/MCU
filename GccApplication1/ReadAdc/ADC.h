@@ -21,6 +21,7 @@ extern volatile uint16_t brek;
 extern volatile uint16_t button_val;
 
 static uint8_t get_button_from_adc(uint16_t adc_val);
+static void check_buttons(void);
 void ADC_Start(void);
 
 #endif /* ADC_H_ */
